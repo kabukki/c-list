@@ -5,7 +5,7 @@
 ** Login   <le-rou_c@epitech.net>
 ** 
 ** Started on  Thu Mar 23 15:18:58 2017 Lucien Le Roux
-** Last update Thu Mar 23 21:09:29 2017 Lucien Le Roux
+** Last update Thu Mar 23 22:33:15 2017 Lucien Le Roux
 */
 
 #ifndef LIST_H_
@@ -35,9 +35,12 @@ void	lconcat(t_list *a, t_list *b);
 
 /* List modification */
 void	lapply(t_list *head, void *(*f)(void *));
+void	lsort(t_list *head, int (*f)(void *, void *));
+t_list	*lrev(t_list *head);
 
 /* Getters */
 t_list	*lat(t_list *head, size_t n);
+t_list	*llast(t_list *head);
 t_list	*lfind(t_list *head, bool (*f)(void *));
 
 /* Informative fuctions */
