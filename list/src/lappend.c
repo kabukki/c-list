@@ -5,16 +5,16 @@
 ** Login   <le-rou_c@epitech.net>
 ** 
 ** Started on  Thu Mar 23 16:06:41 2017 Lucien Le Roux
-** Last update Thu Mar 23 16:10:38 2017 Lucien Le Roux
+** Last update Thu Mar 23 21:11:42 2017 Lucien Le Roux
 */
 
 #include "list.h"
 
+/*
+ * Adds node to the end of the list
+ */
 void lappend(t_list *head, t_list *node) {
   if (head == NULL)
     return ;
-  while (head->next) {
-    head = head->next;
-  }
-  head->next = node;
+  lat(head, lsize(head) - 1)->next = node;
 }

@@ -3,7 +3,7 @@
 ## Login   <le-rou_c@epitech.net>
 ## 
 ## Started on  Thu Mar 23 15:17:30 2017 Lucien Le Roux
-## Last update Thu Mar 23 20:36:13 2017 Lucien Le Roux
+## Last update Thu Mar 23 21:09:03 2017 Lucien Le Roux
 ##
 
 NAME	=	lib/liblist.so
@@ -19,6 +19,7 @@ SRC	=	src/lnode.c		\
 		src/lconcat.c		\
 		src/lapply.c		\
 		src/lat.c		\
+		src/lfind.c		\
 		src/print_int.c		\
 		src/print_string.c
 

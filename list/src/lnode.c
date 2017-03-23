@@ -5,11 +5,14 @@
 ** Login   <le-rou_c@epitech.net>
 ** 
 ** Started on  Thu Mar 23 15:21:46 2017 Lucien Le Roux
-** Last update Thu Mar 23 15:38:45 2017 Lucien Le Roux
+** Last update Thu Mar 23 21:14:41 2017 Lucien Le Roux
 */
 
 #include "list.h"
 
+/*
+ * Creates a node
+ */
 t_list *lnode(void *data) {
   t_list *node = malloc(sizeof(*node));
 

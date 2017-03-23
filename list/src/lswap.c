@@ -5,11 +5,14 @@
 ** Login   <le-rou_c@epitech.net>
 ** 
 ** Started on  Thu Mar 23 15:58:04 2017 Lucien Le Roux
-** Last update Thu Mar 23 16:02:55 2017 Lucien Le Roux
+** Last update Thu Mar 23 21:17:37 2017 Lucien Le Roux
 */
 
 #include "list.h"
 
+/*
+ * Exchanges the data of two nodes
+ */
 void lswap(t_list *a, t_list *b) {
   void *tmp;
 

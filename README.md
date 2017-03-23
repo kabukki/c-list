@@ -3,6 +3,7 @@
 ## What is it ?
 
 LibMatrix is a custom C library that helps you easily manipulate lists.
+
 The functions are inspired by the OCaml List module.
 
 The library features simple tools and functions to use lists:
@@ -20,6 +21,7 @@ The library features simple tools and functions to use lists:
 
 ### Getters
 * at
+* find
 
 ### Informative functions
 * size
@@ -42,12 +44,34 @@ typedef struct  s_list
 ```
 
 To create a node, simply call the `lnode` function with the data you want to store.
+
 To delete the list, simply call the `ldelete` function passing the first element of the list as an argument.
+
+
+## Example
+
+```C
+t_list *head = lnode("World !");
+
+lappend(head, lnode("Hello"));
+lswap(lat(head, 0), lat(head, 1));
+
+liter(head, &print_string);
+ldelete(head);
+```
+
+This will print :
+
+```
+Hello
+World !
+```
 
 ## Stuff to come
 
-More advanced lists, such as:
+More advanced features, such as:
 * Doubly linked lists
+* List Sorting
 * ...
 
 Release date: unknown

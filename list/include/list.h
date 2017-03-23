@@ -5,12 +5,13 @@
 ** Login   <le-rou_c@epitech.net>
 ** 
 ** Started on  Thu Mar 23 15:18:58 2017 Lucien Le Roux
-** Last update Thu Mar 23 20:48:20 2017 Lucien Le Roux
+** Last update Thu Mar 23 21:09:29 2017 Lucien Le Roux
 */
 
 #ifndef LIST_H_
 # define LIST_H_
 
+# include <stdbool.h>
 # include <stdlib.h>
 # include <stdio.h>
 
@@ -37,6 +38,7 @@ void	lapply(t_list *head, void *(*f)(void *));
 
 /* Getters */
 t_list	*lat(t_list *head, size_t n);
+t_list	*lfind(t_list *head, bool (*f)(void *));
 
 /* Informative fuctions */
 void	liter(t_list *head, void (*f)(void *));

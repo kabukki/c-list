@@ -5,11 +5,14 @@
 ** Login   <le-rou_c@epitech.net>
 ** 
 ** Started on  Thu Mar 23 15:28:57 2017 Lucien Le Roux
-** Last update Thu Mar 23 15:43:25 2017 Lucien Le Roux
+** Last update Thu Mar 23 21:14:14 2017 Lucien Le Roux
 */
 
 #include "list.h"
 
+/*
+ * Executes f for every member of the list
+ */
 void liter(t_list *head, void (*f)(void *)) {
   while (head) {
     (*f)(head->data);
