@@ -5,7 +5,7 @@
 ** Login   <le-rou_c@epitech.net>
 ** 
 ** Started on  Thu Mar 23 21:53:30 2017 Lucien Le Roux
-** Last update Thu Mar 23 22:52:30 2017 Lucien Le Roux
+** Last update Fri Mar 24 10:39:37 2017 Lucien Le Roux
 */
 
 #include "list.h"
@@ -14,44 +14,52 @@
  * Bubble sort
  * O(n^2)
  */
-static void lbubble_sort(t_list *head, int (*f)(void *, void *)) {
-  t_list *sh = head;
-  bool sorted;
+static t_list *lbubble_sort(t_list *head, int (*f)(void *, void *)) {
+  t_list *cur;
+  bool sorted = false;
+  size_t len = lsize(head), i;
 
   if (head == NULL)
     return ;
-  do {
-    sorted = true;
-    head = sh;
-    while (head->next) {
-      if ((*f)(head->data, head->next->data) > 0) {
-	lswap(head, head->next);
-	sorted = false;
+  for (i = 0; !sorted && i < len ; i++) {
+    cur = head;
+    while (cur->next != NULL) {
+      sorted = true;
+      while (cur->next) {
+	if ((*f)(cur->data, cur->next->data) > 0) {
+	  lswap(cur, cur->next);
+	  sorted = false;
+	}
+	cur = cur->next;
       }
-      head = head->next;
     }
-  } while (!sorted);
+  }
+  return head;
 }
 
 /*
  * Merge sort
  * O(n log n)
  */
-static void lmerge_sort(t_list *head, int (*f)(void *, void *)) {
-  t_list *left, *right;
-  size_t len = lsize(head);
+static t_list *lmerge_sort(t_list *head, int (*f)(void *, void *)) {
+  t_list *left, *mid, *right;
 
-  if (head == NULL || len < 2)
-    return ;
-
-  // fill left
+  if (head == NULL || head->next == NULL) // Base condition: list size < 2
+    return head;
   left = head;
-  // fill right
-  right = lat(head, len / 2);
+  mid = lat(head, lsize(head) / 2 - 1);
+  right = mid->next;
+  mid->next = NULL;
 
+  /*
+  lmerge_sort(left, f);
+  lmerge_sort(right, f);
+  return lmerge(left, right, f);
+  */
   // lmerge_sort left
   // lmerge_sort left
   // lmerge left, right, head ---> merge left & right INTO head, following the comparison function. (overwrite)
+  return lmerge(lmerge_sort(left, f), lmerge_sort(right, f), f);
 }
 
 /*
@@ -59,6 +67,6 @@ static void lmerge_sort(t_list *head, int (*f)(void *, void *)) {
  * Returns the sorted list
  * Current implementation: bubble sort
  */
-void lsort(t_list *head, int (*f)(void *, void *)) {
-  lbubble_sort(head, f);
+t_list *lsort(t_list *head, int (*f)(void *, void *)) {
+  return lmerge_sort(head, f);
 }

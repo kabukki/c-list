@@ -5,7 +5,7 @@
 ** Login   <le-rou_c@epitech.net>
 ** 
 ** Started on  Thu Mar 23 15:18:58 2017 Lucien Le Roux
-** Last update Thu Mar 23 22:33:15 2017 Lucien Le Roux
+** Last update Fri Mar 24 10:45:00 2017 Lucien Le Roux
 */
 
 #ifndef LIST_H_
@@ -30,12 +30,13 @@ void	ldelete(t_list *head);
 void	lswap(t_list *a, t_list *b);
 void	lappend(t_list *head, t_list *node);
 t_list	*lprepend(t_list *head, t_list *node);
-// insert
+void	linsert(t_list *target, t_list *newnode);
 void	lconcat(t_list *a, t_list *b);
 
 /* List modification */
 void	lapply(t_list *head, void *(*f)(void *));
-void	lsort(t_list *head, int (*f)(void *, void *));
+t_list	*lsort(t_list *head, int (*f)(void *, void *));
+t_list	*lmerge(t_list *a, t_list *b, int (*f)(void *, void *));
 t_list	*lrev(t_list *head);
 
 /* Getters */

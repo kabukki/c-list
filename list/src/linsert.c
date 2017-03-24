@@ -5,12 +5,15 @@
 ** Login   <le-rou_c@epitech.net>
 ** 
 ** Started on  Thu Mar 23 18:25:30 2017 Lucien Le Roux
-** Last update Thu Mar 23 21:13:58 2017 Lucien Le Roux
+** Last update Fri Mar 24 10:59:18 2017 Lucien Le Roux
 */
 
 #include "list.h"
 
 /*
- * Insert a new node between two nodes
+ * Insert a new node before a given node
  */
-// TODO
+void linsert(t_list *target, t_list *node) {
+  lswap(target, node);
+  node->next = target->next;
+}

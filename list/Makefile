@@ -3,7 +3,7 @@
 ## Login   <le-rou_c@epitech.net>
 ## 
 ## Started on  Thu Mar 23 15:17:30 2017 Lucien Le Roux
-## Last update Thu Mar 23 22:35:26 2017 Lucien Le Roux
+## Last update Fri Mar 24 10:54:46 2017 Lucien Le Roux
 ##
 
 NAME	=	lib/liblist.so
@@ -16,9 +16,11 @@ SRC	=	src/lnode.c		\
 		src/lswap.c		\
 		src/lappend.c		\
 		src/lprepend.c		\
+		src/linsert.c		\
 		src/lconcat.c		\
 		src/lapply.c		\
 		src/lsort.c		\
+		src/lmerge.c		\
 		src/lrev.c		\
 		src/lat.c		\
 		src/llast.c		\
@@ -30,7 +32,7 @@ OBJ	=	$(SRC:.c=.o)
 
 INC	=	-I./include
 
-CFLAGS	=	$(INC)
+CFLAGS	=	$(INC) -g
 CC	=	gcc $(CFLAGS)
 
 all:	$(NAME)
