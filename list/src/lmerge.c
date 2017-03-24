@@ -5,14 +5,14 @@
 ** Login   <le-rou_c@epitech.net>
 ** 
 ** Started on  Fri Mar 24 09:02:08 2017 Lucien Le Roux
-** Last update Fri Mar 24 10:15:48 2017 Lucien Le Roux
+** Last update Fri Mar 24 11:35:24 2017 Lucien Le Roux
 */
 
 #include "list.h"
 
 /*
  * Merge two lists following the comparison function f
- * Assuming a and b are already sorted according to the function fxs
+ * Assuming a and b are already sorted according to the function f
  * Returns a new ordered list
  */
 t_list *lmerge(t_list *a, t_list *b, int (*f)(void *, void *)) {

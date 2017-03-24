@@ -5,7 +5,7 @@
 ** Login   <le-rou_c@epitech.net>
 ** 
 ** Started on  Thu Mar 23 15:18:58 2017 Lucien Le Roux
-** Last update Fri Mar 24 11:22:36 2017 Lucien Le Roux
+** Last update Fri Mar 24 11:37:51 2017 Lucien Le Roux
 */
 
 #ifndef LIST_H_
@@ -32,7 +32,7 @@ void	ldelete(t_list *head);
 /* List manipulation */
 void	lswap(t_list *a, t_list *b);
 void	lappend(t_list *head, t_list *node);
-t_list	*lprepend(t_list *head, t_list *node);
+void	lprepend(t_list *head, t_list *node);
 void	linsert(t_list *target, t_list *newnode);
 void	lconcat(t_list *a, t_list *b);
 
