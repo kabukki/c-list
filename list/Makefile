@@ -3,10 +3,11 @@
 ## Login   <le-rou_c@epitech.net>
 ## 
 ## Started on  Thu Mar 23 15:17:30 2017 Lucien Le Roux
-## Last update Fri Mar 24 10:54:46 2017 Lucien Le Roux
+## Last update Fri Mar 24 18:17:46 2017 Lucien Le Roux
 ##
 
-NAME	=	lib/liblist.so
+SONAME	=	lib/liblist.so
+ANAME	=	lib/liblist.a
 
 SRC	=	src/lnode.c		\
 		src/lcopy.c		\
@@ -27,7 +28,6 @@ SRC	=	src/lnode.c		\
 		src/lfind.c		\
 		src/print_int.c		\
 		src/print_string.c
-
 OBJ	=	$(SRC:.c=.o)
 
 INC	=	-I./include
@@ -35,18 +35,19 @@ INC	=	-I./include
 CFLAGS	=	$(INC) -g
 CC	=	gcc $(CFLAGS)
 
-all:	$(NAME)
+all:	$(SONAME) $(ANAME)
 
-$(NAME):	$(OBJ)
-	$(CC) -shared $(OBJ) -o $(NAME)
-	@ cp $(NAME) ..
+$(SONAME):	$(OBJ)
+	$(CC) -shared $(OBJ) -o $(SONAME)
+$(ANAME):	$(OBJ)
+	ar rc $(ANAME) $(OBJ)
+	ranlib $(ANAME)
+
 %.o:	%.c
 	$(CC) -fPIC -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
-
 fclean:	clean
-	rm -f $(NAME)
-
+	rm -f $(SONAME) $(ANAME)
 re:	fclean all
