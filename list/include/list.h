@@ -5,7 +5,7 @@
 ** Login   <le-rou_c@epitech.net>
 ** 
 ** Started on  Thu Mar 23 15:18:58 2017 Lucien Le Roux
-** Last update Fri Mar 24 10:45:00 2017 Lucien Le Roux
+** Last update Fri Mar 24 11:22:36 2017 Lucien Le Roux
 */
 
 #ifndef LIST_H_
@@ -15,6 +15,9 @@
 # include <stdlib.h>
 # include <stdio.h>
 
+/*
+ * A node of the list
+ */
 typedef struct	s_list
 {
   void		*data;

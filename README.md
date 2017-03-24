@@ -17,10 +17,12 @@ The library features simple tools and functions to use lists:
 * swap
 * append
 * prepend
+* insert
 * concat
 
 ### Getters
 * at
+* last
 * find
 
 ### Informative functions
@@ -29,7 +31,9 @@ The library features simple tools and functions to use lists:
 
 ### List alteration
 * apply
-* ...
+* sort
+* merge
+* rev
 
 ## How does it work ?
 
