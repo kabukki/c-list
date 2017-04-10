@@ -5,7 +5,7 @@
 ** Login   <le-rou_c@epitech.net>
 ** 
 ** Started on  Fri Mar 24 09:02:08 2017 Lucien Le Roux
-** Last update Fri Mar 24 11:35:24 2017 Lucien Le Roux
+** Last update Mon Apr 10 14:26:29 2017 Lucien Le Roux
 */
 
 #include "list.h"
@@ -31,5 +31,5 @@ t_list *lmerge(t_list *a, t_list *b, int (*f)(void *, void *)) {
   cur->next = (a != NULL) ? a : b;
   cur = nh->next;
   free(nh);
-  return nh->next;
+  return cur;
 }
